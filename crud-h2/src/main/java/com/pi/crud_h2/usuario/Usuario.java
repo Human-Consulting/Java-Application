@@ -1,4 +1,4 @@
-package com.pi.crud_h2;
+package com.pi.crud_h2.usuario;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

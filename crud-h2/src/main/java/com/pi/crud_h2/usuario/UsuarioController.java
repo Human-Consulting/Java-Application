@@ -1,4 +1,4 @@
-package com.pi.crud_h2;
+package com.pi.crud_h2.usuario;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,7 +41,7 @@ public class UsuarioController {
     }
 
     @PutMapping("/{id}")
-    private ResponseEntity<Usuario> atualizar(@PathVariable Integer id, @RequestBody Usuario usuarioParaAlterar, @PathVariable Integer idLogado) {
+    private ResponseEntity<Usuario> alterar(@PathVariable Integer id, @RequestBody Usuario usuarioParaAlterar, @PathVariable Integer idLogado) {
         if (repository.existsById(id) && verificarPermissao(idLogado)) {
                 usuarioParaAlterar.setId(id);
                 Usuario usuarioAlterado = repository.save(usuarioParaAlterar);
