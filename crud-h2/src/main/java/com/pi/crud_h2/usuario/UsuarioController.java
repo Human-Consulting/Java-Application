@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/users")
+@RequestMapping("/usuarios")
 public class UsuarioController {
     @Autowired
     private UsuarioRepository repository;
@@ -41,10 +41,10 @@ public class UsuarioController {
     }
 
     @PutMapping("/{id}")
-    private ResponseEntity<Usuario> alterar(@PathVariable Integer id, @RequestBody Usuario usuarioParaAlterar, @PathVariable Integer idLogado) {
+    private ResponseEntity<Usuario> alterar(@PathVariable Integer id, @RequestBody Usuario usuario, @PathVariable Integer idLogado) {
         if (repository.existsById(id) && verificarPermissao(idLogado)) {
-                usuarioParaAlterar.setId(id);
-                Usuario usuarioAlterado = repository.save(usuarioParaAlterar);
+                usuario.setId(id);
+                Usuario usuarioAlterado = repository.save(usuario);
                 return ResponseEntity.status(200).body(usuarioAlterado);
         }
         return ResponseEntity.status(404).build();

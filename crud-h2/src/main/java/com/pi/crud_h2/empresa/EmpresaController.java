@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/users")
+@RequestMapping("/empresas")
 public class EmpresaController {
     @Autowired
     private EmpresaRepository repository;
@@ -27,18 +27,18 @@ public class EmpresaController {
     private ResponseEntity<List<Empresa>> listar() {
         List<Empresa> empresas = repository.findAll();
 
-        if (empresas.size() > 0){
-            ResponseEntity.status(200).body(empresas);
+        if (empresas.isEmpty()){
+            return ResponseEntity.status(204).build();
         }
 
-        return ResponseEntity.status(204).build();
+       return ResponseEntity.status(200).body(empresas);
     }
 
     @PutMapping("/{id}")
-    private ResponseEntity<Empresa> alterar(@PathVariable Integer id, @RequestBody Empresa empresaParaAlterar){
+    private ResponseEntity<Empresa> alterar(@PathVariable Integer id, @RequestBody Empresa empresa){
         if (repository.existsById(id)){
-            empresaParaAlterar.setId(id);
-            Empresa empresaAlterada = repository.save(empresaParaAlterar);
+            empresa.setId(id);
+            Empresa empresaAlterada = repository.save(empresa);
             return ResponseEntity.status(200).body(empresaAlterada);
         }
 
