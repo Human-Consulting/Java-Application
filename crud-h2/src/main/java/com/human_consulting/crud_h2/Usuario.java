@@ -1,3 +1,5 @@
+package com.human_consulting.crud_h2;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
