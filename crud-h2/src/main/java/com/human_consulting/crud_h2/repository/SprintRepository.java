@@ -1,5 +1,6 @@
-package com.human_consulting.crud_h2;
+package com.human_consulting.crud_h2.repository;
 
+import com.human_consulting.crud_h2.model.Sprint;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

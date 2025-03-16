@@ -1,4 +1,4 @@
-package com.human_consulting.crud_h2;
+package com.human_consulting.crud_h2.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

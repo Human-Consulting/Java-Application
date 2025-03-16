@@ -1,5 +1,7 @@
-package com.human_consulting.crud_h2;
+package com.human_consulting.crud_h2.controller;
 
+import com.human_consulting.crud_h2.repository.UsuarioRepository;
+import com.human_consulting.crud_h2.model.Usuario;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

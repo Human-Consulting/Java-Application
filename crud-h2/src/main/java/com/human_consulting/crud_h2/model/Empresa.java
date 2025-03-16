@@ -1,4 +1,4 @@
-package com.human_consulting.crud_h2;
+package com.human_consulting.crud_h2.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -11,7 +11,7 @@ public class Empresa {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String nome;
-    private Usuario Diretor;
+    private Integer diretor;
     private String cnpj;
 
     public Integer getId() {
@@ -30,12 +30,12 @@ public class Empresa {
         this.nome = nome;
     }
 
-    public Usuario getDiretor() {
-        return Diretor;
+    public Integer getDiretor() {
+        return diretor;
     }
 
-    public void setDiretor(Usuario diretor) {
-        Diretor = diretor;
+    public void setDiretor(Integer diretor) {
+        this.diretor = diretor;
     }
 
     public String getCnpj() {
