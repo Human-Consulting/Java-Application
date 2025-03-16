@@ -1,12 +1,8 @@
-package com.pi.crud_h2.usuario;
-
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/usuarios")
@@ -43,9 +39,9 @@ public class UsuarioController {
     @PutMapping("/{id}")
     private ResponseEntity<Usuario> alterar(@PathVariable Integer id, @RequestBody Usuario usuario, @PathVariable Integer idLogado) {
         if (repository.existsById(id) && verificarPermissao(idLogado)) {
-                usuario.setId(id);
-                Usuario usuarioAlterado = repository.save(usuario);
-                return ResponseEntity.status(200).body(usuarioAlterado);
+            usuario.setId(id);
+            Usuario usuarioAlterado = repository.save(usuario);
+            return ResponseEntity.status(200).body(usuarioAlterado);
         }
         return ResponseEntity.status(404).build();
     }
@@ -53,7 +49,7 @@ public class UsuarioController {
     @DeleteMapping("/{id}")
     private ResponseEntity<Usuario> deletar(@PathVariable Integer id, @PathVariable Integer idLogado) {
         if (repository.existsById(id) && verificarPermissao(idLogado)) {
-                repository.deleteById(id);
+            repository.deleteById(id);
             return ResponseEntity.status(204).build();
         }
         return ResponseEntity.status(404).build();
