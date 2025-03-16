@@ -1,4 +1,4 @@
-package com.pi.crud_h2;
+package com.human_consulting.crud_h2;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

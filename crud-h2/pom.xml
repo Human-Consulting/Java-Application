@@ -8,11 +8,11 @@
 		<version>3.4.3</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.pi</groupId>
-	<artifactId>crud-h2</artifactId>
+	<groupId>com.human_consulting</groupId>
+	<artifactId>crud_h2</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>crud-h2</name>
-	<description>Demo project for Spring Boot</description>
+	<name>crud_h2</name>
+	<description>Crud H2 project for Spring Boot</description>
 	<url/>
 	<licenses>
 		<license/>
